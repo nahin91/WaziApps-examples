@@ -17,6 +17,13 @@
       api.getDevices().then(devices => {
         console.log(devices[0]);
         info.id = devices[0].id;
+        info.gateway_id = devices[0].gateway_id;
+        info.name = devices[0].name;
+        info.owner = devices[0].owner;
+        info.visibility = devices[0].visibility;
+        info.date_created = devices[0].date_created;
+        info.date_modified = devices[0].date_modified;
+        info.domain = devices[0].domain;
 
 
         // for (device of devices) {
@@ -31,9 +38,9 @@
         document.getElementById("device_value").innerHTML = JSON.stringify(info);
       });
     </script>
-    Device list:
+    <h3>Single Device Information:</h3>
     <div id="device_value">
-      waiting 2...
+      waiting for device information...
     </div>
   </body>
 </html>
