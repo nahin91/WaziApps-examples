@@ -4,9 +4,12 @@
     <script>
       Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
       var api = new Waziup.DevicesApi();
-      var names = [];
+      var info = {};
       api.getDevices().then(devices => {
         console.log(devices[0]);
+        info = JSON.stringify(devices[0]);
+
+
         // for (device of devices) {
         //   names.push(device.id + ": ");
         //   for (sensor of device.sensors) {
@@ -16,7 +19,7 @@
         //   }
         //   names.push("<br/>");
         // }
-        // document.getElementById("device_value").innerHTML = names;
+        document.getElementById("device_value").innerHTML = info;
       });
     </script>
     Device list:
