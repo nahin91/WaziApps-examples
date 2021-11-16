@@ -12,7 +12,9 @@
           visibility: null,
           date_created: null,
           date_modified: null,
-          domain:null
+          domain:null,
+          sensors: [],
+          actuators: null
       };
       api.getDevices().then(devices => {
         console.log(devices[0]);
@@ -24,6 +26,8 @@
         info.date_created = devices[0].date_created;
         info.date_modified = devices[0].date_modified;
         info.domain = devices[0].domain;
+        info.sensors = devices[0].sensors;
+        info.actuators = devices[0].actuators.length > 0 ? devices[0].actuators : "no actuator found!";
 
 
         // for (device of devices) {
