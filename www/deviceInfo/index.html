@@ -6,7 +6,7 @@
       var api = new Waziup.DevicesApi();
       var names = [];
       api.getDevices().then(devices => {
-        console.log(devices);
+        console.log(devices[0]);
         // for (device of devices) {
         //   names.push(device.id + ": ");
         //   for (sensor of device.sensors) {
