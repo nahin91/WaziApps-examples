@@ -4,10 +4,19 @@
     <script>
       Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
       var api = new Waziup.DevicesApi();
-      var info = {};
+      var info = {
+          id: null,
+          gateway_id: null,
+          name: null,
+          owner: null,
+          visibility: null,
+          date_created: null,
+          date_modified: null,
+          domain:null
+      };
       api.getDevices().then(devices => {
         console.log(devices[0]);
-        info = JSON.stringify(devices[0]);
+        info.id = JSON.stringify(devices[0].id);
 
 
         // for (device of devices) {
@@ -24,7 +33,7 @@
     </script>
     Device list:
     <div id="device_value">
-      Loading...
+      waiting...
     </div>
   </body>
 </html>
