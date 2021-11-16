@@ -16,7 +16,7 @@
       };
       api.getDevices().then(devices => {
         console.log(devices[0]);
-        info.id = JSON.stringify(devices[0].id);
+        info.id = devices[0].id;
 
 
         // for (device of devices) {
@@ -28,12 +28,12 @@
         //   }
         //   names.push("<br/>");
         // }
-        document.getElementById("device_value").innerHTML = info;
+        document.getElementById("device_value").innerHTML = JSON.stringify(info);
       });
     </script>
     Device list:
     <div id="device_value">
-      waiting...
+      waiting 2...
     </div>
   </body>
 </html>
